@@ -13,7 +13,7 @@ The main goal of this project is to create a **functional website for kriisiplaa
 - Slack
 
 ## Link for the design
-[Figma]
+[Figma][Link Text](https://www.figma.com/design/xAxzFfD7Pjjfgv19T4oLU6/Untitled?node-id=0-1&p=f&t=bpn4rf3zukXMIBhE-0)
 
 ## DAY 1
 
