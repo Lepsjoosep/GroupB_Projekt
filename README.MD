@@ -7,13 +7,13 @@
 The main goal of this project is to create a **functional website for kriisiplaan from where you can seek help and calculate how much food water etc you need to survive.**
 
 ## Tools used for this project
-- github
-- figma
+- GitHub
+- Figma
 - VsCode
 - Slack
 
 ## Link for the design
-[Figma]
+[Figma](https://www.figma.com/design/xAxzFfD7Pjjfgv19T4oLU6/Untitled?node-id=0-1&p=f&t=bpn4rf3zukXMIBhE-0)
 
 ## DAY 1
 
