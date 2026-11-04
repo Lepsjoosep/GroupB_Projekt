@@ -1,6 +1,6 @@
 # KRIISIPLAAN
 
-# ![image](https://github.com/Lepsjoosep/GroupB_Projekt/blob/main/assets/logo-removebg-preview.png)
+# ![image](https://github.com/Lepsjoosep/GroupB_Projekt/blob/main/assets/logo-removebg-preview.png{width=100px height=100px)
 
 ## THE PURPOSE OF THIS PROJECT
 
