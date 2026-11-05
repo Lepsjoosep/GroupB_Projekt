@@ -25,6 +25,8 @@ Finally we completed the base design and started doing the figma design.
 
 ## DAY 2
 
+Layout and functionality improvements.
+
 Figure out the formula for resource management.
 Calculate the amount of food and water necessary for given number of individuals and days.
 For pets we just give a suggestion of supplies needed.
