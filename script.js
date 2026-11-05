@@ -37,3 +37,19 @@ document.getElementById("household-confirm")
 
 document.getElementById("household-cancel")
     .addEventListener("click", () => modal.close());
+
+const daysInput = document.getElementById("days");
+const daysMinus = document.getElementById("days-minus");
+const daysPlus = document.getElementById("days-plus");
+
+if (daysInput && daysMinus && daysPlus) {
+
+    daysPlus.addEventListener("click", () => {
+        daysInput.value = Number(daysInput.value) + 1;
+    });
+
+    daysMinus.addEventListener("click", () => {
+        daysInput.value = Math.max(1, Number(daysInput.value) - 1);
+    });
+
+}
