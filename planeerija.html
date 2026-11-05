@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriisiplaan | Planeerija</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="page-planner">
+
+    <header>
+        <div class="brand">
+            <a href="index.html">
+                <img src="assets/logo-removebg-preview.png"
+                     alt="Kriisiplaan logo"
+                     class="logo">
+            </a>
+            <span>KRIISIPLAAN</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Esileht</a>
+            <a href="lisainfo.html">Lisainfo</a>
+        </nav>
+
+        <div class="language">
+            <button type="button" class="active" lang="et">EST</button>
+            <span>|</span>
+            <button type="button" lang="en">EN</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="wave-background"></div>
+
+        <section class="planner">
+            <h1>PLANEERIJA</h1>
+
+            <form id="planner-form">
+                <div class="form-content">
+
+                    <div class="field">
+                        <label for="household-button">Leibkond</label>
+                        <button type="button" id="household-button">
+                            Vali leibkond
+                        </button>
+                        <input type="hidden" id="people" name="people" value="0">
+                    </div>
+
+                    <dialog id="household-modal">
+                        <h2>Leibkonna liikmed</h2>
+
+                        <div class="modal-row">
+                            <label for="adults">Täiskasvanud</label>
+                            <button type="button" id="adults-minus">−</button>
+                            <input type="number" id="adults" min="0" value="1" readonly>
+                            <button type="button" id="adults-plus">+</button>
+                        </div>
+
+                        <div class="modal-row">
+                            <label for="children">Lapsed</label>
+                            <button type="button" id="children-minus">−</button>
+                            <input type="number" id="children" min="0" value="0" readonly>
+                            <button type="button" id="children-plus">+</button>
+                        </div>
+
+                        <div class="modal-row">
+                            <label for="pets">Lemmikloomad</label>
+                            <button type="button" id="pets-minus">−</button>
+                            <input type="number" id="pets" min="0" value="0" readonly>
+                            <button type="button" id="pets-plus">+</button>
+                        </div>
+
+                        <button type="button" id="household-confirm">
+                            Kinnita
+                        </button>
+                        <button type="button" id="household-cancel">
+                            Tühista
+                        </button>
+                    </dialog>
+
+                    <div class="field">
+                        <label for="days">Ajavahemik (päevades)</label>
+
+                        <div class="counter">
+                            <button type="button" id="days-minus">−</button>
+                            <input
+                                type="number"
+                                id="days"
+                                name="days"
+                                min="0"
+                                value="0"
+                            >
+                            <button type="button" id="days-plus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="crisis">Milline kriis?</label>
+
+                        <select id="crisis" name="crisis" class="crisis-select">
+                            <option value="" selected disabled>
+                                Vali kriis
+                            </option>
+                            <option value="elektrikatkestus">
+                                Elektrikatkestus
+                            </option>
+                            <option value="veekatkestus">
+                                Veekatkestus
+                            </option>
+                            <option value="torm">
+                                Torm
+                            </option>
+                            <option value="uleujutus">
+                                Üleujutus
+                            </option>
+                            <option value="tulekahju">
+                                Tulekahju
+                            </option>
+                            <option value="evakuatsioon">
+                                Evakuatsioon
+                            </option>
+                            <option value="muu">
+                                Muu kriis
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="start-button">
+                    Koosta kriisiplaan
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-brand">
+            <img src="assets/logo-removebg-preview.png" alt="Kriisiplaan logo" class="logo">
+            <span>KRIISIPLAAN</span>
+        </div>
+
+        <div class="footer-contacts">
+            <p>
+                Riigiinfo telefon:
+                <a href="tel:1247">1247</a><br>
+                <a href="tel:+3726001247">+372 600 1247</a>
+            </p>
+
+            <p>
+                Mürgistusteabekeskus:
+                <a href="tel:16662">16662</a><br>
+                <a href="tel:+3727943794">+372 794 3794</a>
+            </p>
+
+            <p>
+                Hädaabi:
+                <a href="tel:112">112</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

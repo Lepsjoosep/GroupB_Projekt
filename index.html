@@ -1,34 +1,78 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/style.css">
-        <title>Kriisiplaan</title>
-    </head>
-    <body>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriisiplaan – Avaleht</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
 
-        <header>
-            <nav class="container">
-                <a class="logo" href="">Logo</a>
-                <p>Kriisiplaan</p>
-                <div class="links">
-                    <a href="planeerija.html">Planeerija</a>
-                    <a href="lisainfo.html">Info</a>
-                </div>
-            </nav>
-        </header>
+<body class="page-home">
 
-        <main class="container">
-            <section>
-                <p>Kriisiks saab igaüks iseseisvalt valmistuda. Selleks juhuks tegime selle lehe, et saaksid vajadusel varusid täiendada.</p>
-                <a href="planeerija.html">Planeerijasse</a>
-            </section>
-        </main>
+    <header>
+        <div class="brand">
+            <a href="index.html">
+                <img src="assets/logo-removebg-preview.png"
+                     alt="Kriisiplaan logo"
+                     class="logo">
+            </a>
+            <span>KRIISIPLAAN</span>
+        </div>
 
-        <footer>
-            <p>Riigiinfo telefon: 1246
-+372 600 1247</p>
-        </footer>
-    </body>
+        <nav>
+            <a href="planeerija.html">Planeerija</a>
+            <a href="lisainfo.html">Lisainfo</a>
+        </nav>
+
+        <div class="language">
+            <button type="button" class="active" lang="et">EST</button>
+            <span>|</span>
+            <button type="button" lang="en">EN</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="wave-background" aria-hidden="true"></div>
+
+        <section class="hero">
+            <h1>ABI IGAS RASKES HETKES</h1>
+
+            <p>
+                Kriisiks saab igaüks iseseisvalt valmistuda.
+                Selleks juhuks tegime selle lehe, et saaksid
+                vajadusel varusid täiendada.
+            </p>
+
+            <a href="planeerija.html" class="hero-link">
+                Planeerijasse &rarr;
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-brand">
+            <img src="assets/logo-removebg-preview.png"
+                 alt="Kriisiplaan logo"
+                 class="logo">
+            <span>KRIISIPLAAN</span>
+        </div>
+
+        <div class="footer-contacts">
+            <p>
+                Riigiinfo telefon: 1246<br>
+                +372 600 1247
+            </p>
+
+            <p>
+                Mürgistusteabekeskus: 16662<br>
+                +372 794 3794
+            </p>
+
+            <p>Hädaabi 112</p>
+        </div>
+    </footer>
+
+</body>
 </html>
