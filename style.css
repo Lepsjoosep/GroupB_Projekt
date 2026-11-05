@@ -575,11 +575,9 @@ main {
 ========================================= */
 
 footer {
-    min-height: 195px;
-
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 30px;
 
     padding: 35px 5%;
