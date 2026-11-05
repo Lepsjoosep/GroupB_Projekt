@@ -22,3 +22,5 @@ We first made a github repositry and sharing access to everybody in the group.
 First base design was made by lunch. We did this by discussing it as a group 
 (sometimes not important subjects came into the discussion and attention to the base design was lost, this caused some of the team to not get the word for deciding design aspects.)
 Finally we completed the base design and started doing the figma design.
+
+## DAY 2
