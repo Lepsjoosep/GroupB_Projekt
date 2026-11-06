@@ -1,21 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="et">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Kriisiplaan | Planeerija</title>
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
 <body class="page-planner">
 
+    <!-- PÄIS -->
     <header>
         <div class="brand">
             <a href="index.html">
-                <img src="assets/logo-removebg-preview.png"
-                     alt="Kriisiplaan logo"
-                     class="logo">
+                <img
+                    src="assets/logo-removebg-preview.png"
+                    alt="Kriisiplaan logo"
+                    class="logo"
+                >
             </a>
             <span>KRIISIPLAAN</span>
         </div>
@@ -26,95 +33,110 @@
         </nav>
     </header>
 
+    <!-- PLANEERIJA -->
     <main>
-
         <section class="planner">
+
             <h1>PLANEERIJA</h1>
 
             <form id="planner-form">
                 <div class="form-content">
 
+                    <!-- LEIBKOND -->
                     <div class="field">
-                        <label for="household-button">Leibkond</label>
-                        <button type="button" id="household-button">
+                        <label for="household-button">
+                            Leibkond
+                        </label>
+
+                        <button
+                            type="button"
+                            id="household-button"
+                        >
                             Vali leibkond
                         </button>
-                        <input type="hidden" id="people" name="people" value="0">
+
+                        <input
+                            type="hidden"
+                            id="people"
+                            name="people"
+                            value="0"
+                        >
                     </div>
 
-                    <dialog id="household-modal">
-                        <h2>Leibkonna liikmed</h2>
-
-                        <div class="modal-row">
-                            <label for="adults">Täiskasvanud</label>
-                            <button type="button" id="adults-minus">−</button>
-                            <input type="number" id="adults" min="0" value="1" readonly>
-                            <button type="button" id="adults-plus">+</button>
-                        </div>
-
-                        <div class="modal-row">
-                            <label for="children">Lapsed</label>
-                            <button type="button" id="children-minus">−</button>
-                            <input type="number" id="children" min="0" value="0" readonly>
-                            <button type="button" id="children-plus">+</button>
-                        </div>
-
-                        <div class="modal-row">
-                            <label for="pets">Lemmikloomad</label>
-                            <button type="button" id="pets-minus">−</button>
-                            <input type="number" id="pets" min="0" value="0" readonly>
-                            <button type="button" id="pets-plus">+</button>
-                        </div>
-
-                        <button type="button" id="household-confirm">
-                            Kinnita
-                        </button>
-                        <button type="button" id="household-cancel">
-                            Tühista
-                        </button>
-                    </dialog>
-
+                    <!-- AJAVAHEMIK -->
                     <div class="field">
-                        <label for="days">Ajavahemik (päevades)</label>
+                        <label for="days">
+                            Ajavahemik (päevades)
+                        </label>
 
                         <div class="counter">
-                            <button type="button" id="days-minus">−</button>
+                            <button
+                                type="button"
+                                id="days-minus"
+                                aria-label="Vähenda päevade arvu"
+                            >
+                                −
+                            </button>
+
                             <input
                                 type="number"
                                 id="days"
                                 name="days"
                                 min="1"
                                 value="1"
+                                required
                             >
-                            <button type="button" id="days-plus">+</button>
+
+                            <button
+                                type="button"
+                                id="days-plus"
+                                aria-label="Suurenda päevade arvu"
+                            >
+                                +
+                            </button>
                         </div>
                     </div>
 
+                    <!-- KRIISITÜÜP -->
                     <div class="field">
-                        <label for="crisis">Milline kriis?</label>
+                        <label for="crisis">
+                            Milline kriis?
+                        </label>
 
-                        <select id="crisis" name="crisis" class="crisis-select">
+                        <select
+                            id="crisis"
+                            name="crisis"
+                            class="crisis-select"
+                            required
+                        >
                             <option value="" selected disabled>
                                 Vali kriis
                             </option>
+
                             <option value="elektrikatkestus">
                                 Elektrikatkestus
                             </option>
+
                             <option value="veekatkestus">
                                 Veekatkestus
                             </option>
+
                             <option value="torm">
                                 Torm
                             </option>
+
                             <option value="uleujutus">
                                 Üleujutus
                             </option>
+
                             <option value="tulekahju">
                                 Tulekahju
                             </option>
+
                             <option value="evakuatsioon">
                                 Evakuatsioon
                             </option>
+
                             <option value="muu">
                                 Muu kriis
                             </option>
@@ -123,16 +145,25 @@
 
                 </div>
 
-                <button type="submit" class="start-button">
-                    Koosta kriisiplaan
+                <button
+                    type="submit"
+                    class="start-button"
+                >Koosta kriisiplaan
                 </button>
+
             </form>
+
         </section>
     </main>
 
+    <!-- JALUS -->
     <footer>
         <div class="footer-brand">
-            <img src="assets/logo-removebg-preview.png" alt="Kriisiplaan logo" class="logo">
+            <img
+                src="assets/logo-removebg-preview.png"
+                alt="Kriisiplaan logo"
+                class="logo"
+            >
             <span>KRIISIPLAAN</span>
         </div>
 
@@ -140,13 +171,17 @@
             <p>
                 Riigiinfo telefon:
                 <a href="tel:1247">1247</a><br>
-                <a href="tel:+3726001247">+372 600 1247</a>
+                <a href="tel:+3726001247">
+                    +372 600 1247
+                </a>
             </p>
 
             <p>
                 Mürgistusteabekeskus:
                 <a href="tel:16662">16662</a><br>
-                <a href="tel:+3727943794">+372 794 3794</a>
+                <a href="tel:+3727943794">
+                    +372 794 3794
+                </a>
             </p>
 
             <p>
@@ -156,5 +191,147 @@
         </div>
     </footer>
 
+    <!-- LEIBKONNA MODAALAKEN -->
+    <dialog
+        id="household-modal"
+        aria-labelledby="household-title"
+    >
+        <h2 id="household-title">
+            Leibkonna liikmed
+        </h2>
+
+        <!-- TÄISKASVANUD -->
+        <div class="modal-row">
+            <label for="adults">
+                Täiskasvanud
+            </label>
+
+            <button
+                type="button"
+                id="adults-minus"
+                aria-label="Vähenda täiskasvanute arvu"
+            >
+                −
+            </button>
+
+            <input
+                type="number"
+                id="adults"
+                min="0"
+                value="1"
+                readonly
+            >
+
+            <button
+                type="button"
+                id="adults-plus"
+                aria-label="Suurenda täiskasvanute arvu"
+            >
+                +
+            </button>
+        </div>
+
+        <!-- LAPSED -->
+        <div class="modal-row">
+            <label for="children">
+                Lapsed
+            </label>
+
+            <button
+                type="button"
+                id="children-minus"
+                aria-label="Vähenda laste arvu"
+            >
+                −
+            </button>
+
+            <input
+                type="number"
+                id="children"
+                min="0"
+                value="0"
+                readonly
+            >
+
+            <button
+                type="button"
+                id="children-plus"
+                aria-label="Suurenda laste arvu"
+            >
+                +
+            </button>
+        </div>
+
+        <!-- LEMMIKLOOMAD -->
+        <div class="modal-row">
+            <label for="pets">
+                Lemmikloomad
+            </label>
+
+            <button
+                type="button"
+                id="pets-minus"
+                aria-label="Vähenda lemmikloomade arvu"
+            >
+                −
+            </button>
+
+            <input
+                type="number"
+                id="pets"
+                min="0"
+                value="0"
+                readonly
+            >
+
+            <button
+                type="button"
+                id="pets-plus"
+                aria-label="Suurenda lemmikloomade arvu"
+            >
+                +
+            </button>
+        </div>
+
+        <!-- MODAALAKNA NUPUD -->
+        <div class="modal-actions">
+            <button
+                type="button"
+                id="household-confirm"
+            >
+                Kinnita
+            </button>
+
+            <button
+                type="button"
+                id="household-cancel"
+            >
+                Tühista
+            </button>
+        </div>
+    </dialog>
+    <!-- PRINTABLE CRISIS PLAN MODAL -->
+
+    <dialog id="results-modal" aria-labelledby="results-title">
+
+        <div class="results-header">
+            <h2 id="results-title">MINU KRIISIPLAAN</h2>
+        </div>
+
+        <div id="results-content">
+            <!-- JavaScript inserts the calculated plan here -->
+        </div>
+
+        <div class="results-actions">
+            <button type="button" id="print-plan">
+                Prindi kriisiplaan
+            </button>
+
+            <button type="button" id="close-results">
+                Sulge
+            </button>
+        </div>
+
+    </dialog>
 </body>
 </html>
