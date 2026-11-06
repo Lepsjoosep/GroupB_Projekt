@@ -15,6 +15,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultsModal = document.getElementById("results-modal");
     const resultsContent = document.getElementById("results-content");
 
+/* =====================================
+   RESET PLANNER ON PAGE REFRESH
+===================================== */
+
+    window.addEventListener("pageshow", () => {
+
+        // Leibkond
+        const adults = document.getElementById("adults");
+        const children = document.getElementById("children");
+        const pets = document.getElementById("pets");
+        const people = document.getElementById("people");
+        const householdButton = document.getElementById("household-button");
+
+        if (adults) adults.value = 1;
+        if (children) children.value = 0;
+        if (pets) pets.value = 0;
+        if (people) people.value = 0;
+
+        if (householdButton) {
+            householdButton.textContent = "Vali leibkond";
+        }
+
+        // Ajavahemik
+        const days = document.getElementById("days");
+
+        if (days) {
+            days.value = 1;
+        }
+
+        // Kriisitüüp
+        const crisis = document.getElementById("crisis");
+
+        if (crisis) {
+            crisis.value = "";
+        }
+    });
+
     // Run planner code only on the planner page
     if (!plannerForm) return;
 
@@ -164,6 +201,129 @@ if (householdModal && householdButton) {
             totalPortions
         } = data;
 
+        const electricityInstructions = `
+    <section class="crisis-instructions">
+        <h3>Mida teha elektrikatkestuse korral?</h3>
+
+        <ul>
+            <li>Lülita välja elektriseadmed.</li>
+
+            <li>
+                Kui võrguettevõte ei ole sind elektrikatkestusest
+                teavitanud, teata sellest oma elektrienergia
+                võrguteenuse pakkujale
+                (<a href="https://www.olevalmis.ee/abinumbrid"
+                    target="_blank"
+                    rel="noopener noreferrer">vaata abinumbreid</a>).
+            </li>
+
+            <li>
+                Kasuta alternatiivseid lahendusi kodu kütmiseks,
+                vee kättesaamiseks, toidu valmistamiseks ja info
+                saamiseks. Sooja hoidmiseks ole võimalusel
+                mitmekesi ühes ruumis, hoia uksed ja aknad kinni.
+            </li>
+
+            <li>
+                Hoidu külmkapi ja sügavkülmiku sagedasest
+                avamisest, et toiduained säiliksid kauem.
+            </li>
+
+            <li>
+                Aku- ja patareitoitel olevaid seadmeid,
+                sealhulgas telefoni, kasuta säästlikult
+                ja ainult vältimatu vajaduse korral.
+                Telefonis lülita välja palju energiat
+                vajavad rakendused.
+            </li>
+
+            <li>
+                Kasuta alternatiivseid energiaallikaid
+                (generaator, akud, patareid) säästlikult
+                ja vaid vältimatu vajaduse korral.
+                Nii pikendad nende tööaega.
+            </li>
+
+            <li>
+                Kui sa ei saa elektrikatkestuse korral kodus
+                ise ohutult hakkama, pöördu abi saamiseks
+                kohaliku omavalitsuse poole.
+            </li>
+        </ul>
+    </section>
+`;
+    const waterInstructions = `
+    <section class="crisis-instructions">
+        <h3>Mida teha veekatkestuse korral?</h3>
+
+        <p>
+            Kraani- või kaevuvee puudumine mõjutab oluliselt kogu igapäevaelu.
+            Samas on joogivett lihtne varuda ja see säilib üsna kaua.
+            Arvesta, et veekatkestuse puhul ei pruugi töötada ka kanalisatsioon
+            ehk ei saa tavapäraselt kasutada tualettruumi.
+            Kaardista probleemid, mis sinu kodus tekivad, kui vett ei ole.
+            Kui sõltud ühisveevärgist, uuri korteriühistu, teenusepakkuja
+            või kohaliku omavalitsuse kaudu, kuidas on tagatud elanike
+            veega varustamine teenuse katkemise korral.
+        </p>
+
+        <h4>Joogivesi ja toidu valmistamine</h4>
+        <ul>
+            <li>Hoia kodus võimalusel 3 liitrit vett inimese kohta üheks ööpäevaks.</li>
+
+            <li>Varu koju veepuhastustablette või veefiltreid.</li>
+
+            <li>
+                Looduslikust veekogust võetud veel lase settida, kurna pealmine,
+                selgem veekiht läbi tiheda riide või kohvifiltri ning keeda
+                intensiivselt mulisedes vähemalt 1 minut.
+                Ka seisnud vett on soovitav keeta vähemalt 1 minut.
+                Vee keetmine hävitab seal leiduvad mikroorganismid
+                (bakterid, viirused, algloomad), kuid ei eemalda keemilist reostust.
+            </li>
+
+            <li>
+                <a href="https://allikad.info/springs" target="_blank" rel="noopener noreferrer">
+                    Vaata, kus on sinu lähimad puhta joogivee saamise võimalused
+                </a>
+                (kaev, allikas vmt) ning siseveekogud muu tarbevee võtmiseks.
+            </li>
+
+            <li>
+                <a href="https://www.olevalmis.ee/assets/image/upload/q_auto/f_auto/c_limit,w_1920/v1/olevalmis-payload-live/koyyxtc9m1kc2uwvsii2"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Vaata näidet toidu valmistamisest veekatkestuse ajal
+                </a>.
+            </li>
+        </ul>
+
+        <h4>Tualeti kasutamine ja kanalisatsioon</h4>
+        <ul>
+            <li>Varu koju niiskeid puhastuslappe, desinfitseerimise vahendeid, prügikotte ja hügieenitarbeid.</li>
+
+            <li>
+                Kui kanalisatsiooniteenus katkeb, kasuta tualetina prügikotte.
+                Soovitatav on lisada prügikotti ajalehti, saepuru, turvast
+                või muud imavat materjali. Võimalusel kasuta kuivkäimlat.
+            </li>
+
+            <li>Kasuta jäätmete jaoks solgiämbrit.</li>
+        </ul>
+
+        <h4>Mida teha veekatkestuse ajal?</h4>
+        <ul>
+            <li>Kasuta vett säästlikult.</li>
+
+            <li>Võimalusel lase veetorudesse jäänud vesi kraanidest anumatesse.</li>
+
+            <li>
+                Jälgi kohaliku omavalitsuse ametlikke teadaandeid elanike
+                joogiveega varustamise kohta.
+            </li>
+        </ul>
+    </section>
+`;
         return `
             <div class="plan-summary">
 
@@ -243,6 +403,8 @@ if (householdModal && householdButton) {
                 inimese vanusest, tervisest
                 ja toitumisvajadustest.
             </p>
+            ${crisis === "Elektrikatkestus" ? electricityInstructions : ""}
+            ${crisis === "Veekatkestus" ? waterInstructions : ""}
         `;
     }
 
@@ -290,12 +452,7 @@ if (householdModal && householdButton) {
             // Get selected crisis from the fixed option list
             const crisisNames = {
                 elektrikatkestus: "Elektrikatkestus",
-                veekatkestus: "Veekatkestus",
-                torm: "Torm",
-                uleujutus: "Üleujutus",
-                tulekahju: "Tulekahju",
-                evakuatsioon: "Evakuatsioon",
-                muu: "Muu kriis"
+                veekatkestus: "Veekatkestus"
             };
 
             const crisis = crisisNames[crisisSelect.value];

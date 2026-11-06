@@ -536,3 +536,58 @@ footer {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; }
 }
+
+/* ELEKTRIKATKESTUSE JUHISED */
+
+.crisis-instructions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #c60000;
+}
+
+.crisis-instructions h3 {
+    color: #c60000;
+    margin-bottom: 20px;
+}
+
+.crisis-instructions ul {
+    padding-left: 24px;
+    margin: 0;
+}
+
+.crisis-instructions li {
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.crisis-instructions a {
+    color: #c60000;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.crisis-instructions h4 {
+    margin: 24px 0 12px;
+    color: #111;
+    font-size: 18px;
+}
+
+.crisis-instructions p {
+    line-height: 1.7;
+}
+
+/* Printimisel */
+
+@media print {
+    .crisis-instructions {
+        border-top: 1px solid #777;
+    }
+
+    .crisis-instructions li {
+        break-inside: avoid;
+    }
+
+    .crisis-instructions a {
+        color: #111;
+    }
+}
